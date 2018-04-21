@@ -38,7 +38,7 @@ contract Chiron {
         require(!jobs[imageHash].isStarted);
         require(!jobs[imageHash].isFinished);
         jobs[imageHash].isStarted = true;
-       // availableJobs.push(imageHash);
+        availableJobs.push(imageHash);
     }
 
     function addAnswer(string imageHash, int answer, address user) onlyOwner isValidJob(imageHash) public {
