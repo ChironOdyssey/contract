@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.23;
 
 contract Chiron {
 
@@ -19,7 +19,7 @@ contract Chiron {
         address[] users;
     }
 
-    function Chiron() public {
+    constructor() public {
         owner = msg.sender;
     }
 
@@ -38,7 +38,7 @@ contract Chiron {
         require(!jobs[imageHash].isStarted);
         require(!jobs[imageHash].isFinished);
         jobs[imageHash].isStarted = true;
-        availableJobs.push(imageHash);
+       // availableJobs.push(imageHash);
     }
 
     function addAnswer(string imageHash, int answer, address user) onlyOwner isValidJob(imageHash) public {
@@ -60,8 +60,6 @@ contract Chiron {
 
             }
         }
-
-
     }
 
 
